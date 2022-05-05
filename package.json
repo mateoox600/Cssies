@@ -1,0 +1,19 @@
+{
+  "name": "cssies",
+  "description": "A package to use css in js",
+  "version": "0.0.0",
+  "main": "build/index.js",
+  "private": "true",
+  "scripts": {
+    "test": "ts-node test/",
+    "build": "rmdir /S /Q build && tsc"
+  },
+  "author": "Mateoox600",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.22.0",
+    "@typescript-eslint/parser": "^5.22.0",
+    "eslint": "^8.14.0",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.4"
+  }
+}
