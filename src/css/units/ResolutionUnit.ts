@@ -1,4 +1,3 @@
-import { NumberUnit } from '../Units';
 
 const values = {
     DPI: 'dpi',
@@ -7,8 +6,27 @@ const values = {
     X: 'x' 
 };
 
-export class ResolutionUnitClass<S = keyof typeof values> extends NumberUnit<S> {
+export class ResolutionUnit<N extends keyof typeof values = keyof typeof values> {
+
+    public static values = values;
+
+    constructor(public type: N, public value: number) { }
+
+    public toString() {
+        return `${this.value}${values[this.type]}`;
+    }
+
+    public static DPI(n: number) {
+        return new ResolutionUnit('DPI', n);
+    }
+    public static DPCM(n: number) {
+        return new ResolutionUnit('DPCM', n);
+    }
+    public static DPPX(n: number) {
+        return new ResolutionUnit('DPPX', n);
+    }
+    public static X(n: number) {
+        return new ResolutionUnit('X', n);
+    }
 
 }
-
-export const ResolutionUnit = NumberUnit.from(ResolutionUnitClass, values);
