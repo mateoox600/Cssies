@@ -6,7 +6,9 @@ const values = {
     Turn: 'turn'
 };
 
-export class AngleUnit<N extends keyof typeof values = keyof typeof values> {
+type ValueKeys = keyof typeof values;
+
+export class AngleUnit<N extends ValueKeys = ValueKeys> {
 
     public static values = values;
 

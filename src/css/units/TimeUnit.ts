@@ -4,7 +4,9 @@ const values = {
     Milliseconds: 'ms'
 };
 
-export class TimeUnit<N extends keyof typeof values = keyof typeof values> {
+type ValueKeys = keyof typeof values;
+
+export class TimeUnit<N extends ValueKeys = ValueKeys> {
 
     public static values = values;
 

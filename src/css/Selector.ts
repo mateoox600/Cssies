@@ -34,6 +34,10 @@ export class Selector {
     }
 
     public static chain(...selectors: Selector[]) {
+        return new Selector(selectors.join(' '));
+    }
+
+    public static chainFirst(...selectors: Selector[]) {
         return new Selector(selectors.join('>'));
     }
 

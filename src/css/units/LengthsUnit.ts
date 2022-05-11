@@ -19,7 +19,9 @@ const values = {
     Percentage: '%'
 };
 
-export class LengthsUnit<N extends keyof typeof values = keyof typeof values> {
+type ValueKeys = keyof typeof values;
+
+export class LengthsUnit<N extends ValueKeys = ValueKeys> {
 
     public static values = values;
 

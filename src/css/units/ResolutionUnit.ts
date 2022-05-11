@@ -6,7 +6,9 @@ const values = {
     X: 'x' 
 };
 
-export class ResolutionUnit<N extends keyof typeof values = keyof typeof values> {
+type ValueKeys = keyof typeof values;
+
+export class ResolutionUnit<N extends ValueKeys = ValueKeys> {
 
     public static values = values;
 
